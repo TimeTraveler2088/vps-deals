@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cheap VPS & Server Deals - Curated low-end VPS and server offers">
+  <meta name="keywords" content="Cheap VPS, Low End Deals, Server Deals, Budget VPS, China-optimized VPS">
+  <title>Cheap VPS Deals | Curated Low-End Server Offers</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <style>
+    :root {
+      --primary: #0d6efd;
+      --bg: #f8f9fa;
+      --card-bg: #ffffff;
+      --text: #212529;
+      --text-muted: #6c757d;
+      --border: #eee;
+      --card-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      --card-hover: 0 8px 24px rgba(0,0,0,0.12);
+      --navbar-bg: #212529;
+      --footer-bg: #212529;
+      --footer-text: #adb5bd;
+      --hero-bg: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);
+      --badge-bg: #e7f1ff;
+      --badge-color: #0d6efd;
+      --input-bg: #ffffff;
+      --alert-bg: #fff3cd;
+      --alert-border: #ffecb5;
+      --alert-text: #664d03;
+    }
+
+    [data-theme="dark"] {
+      --bg: #121212;
+      --card-bg: #1e1e1e;
+      --text: #e0e0e0;
+      --text-muted: #a0a0a0;
+      --border: #333;
+      --card-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      --card-hover: 0 8px 24px rgba(0,0,0,0.5);
+      --navbar-bg: #1a1a1a;
+      --footer-bg: #1a1a1a;
+      --footer-text: #a0a0a0;
+      --hero-bg: linear-gradient(135deg, #0a58ca 0%, #084298 100%);
+      --badge-bg: #1a3a5c;
+      --badge-color: #6ea8fe;
+      --input-bg: #2a2a2a;
+      --alert-bg: #332701;
+      --alert-border: #664d03;
+      --alert-text: #ffda6a;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .content-wrapper { flex: 1; }
+
+    .navbar {
+      background-color: var(--navbar-bg) !important;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .navbar-brand { font-weight: 700; letter-spacing: -0.5px; }
+
+    .hero {
+      background: var(--hero-bg);
+      color: white;
+      padding: 0.5rem 0;
+      margin-bottom: 0.75rem;
+    }
+    .hero h1 { font-weight: 700; font-size: 1.7rem; }
+    .hero p { opacity: 0.9; margin-bottom: 0; font-size: 0.95rem; }
+    .hero-links {
+      margin-top: 0.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      justify-content: center;
+    }
+    .hero-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: rgba(255,255,255,0.18);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.35);
+      border-radius: 50px;
+      padding: 0.38rem 0.95rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .hero-links a:hover {
+      background: rgba(255,255,255,0.3);
+      color: #fff;
+      border-color: rgba(255,255,255,0.6);
+    }
+
+    .search-box {
+      max-width: 480px;
+      margin: 0 auto 0.6rem;
+    }
+    .search-box .form-control {
+      border-radius: 50px;
+      padding-left: 1.25rem;
+      padding-right: 3rem;
+      height: 42px;
+      border: 1px solid var(--border);
+      background-color: var(--input-bg);
+      color: var(--text);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .search-box .form-control:focus {
+      background-color: var(--input-bg);
+      color: var(--text);
+      border-color: var(--primary);
+      box-shadow: 0 0 0 0.2rem rgba(13,110,253,0.25);
+    }
+    .search-box .form-control::placeholder {
+      color: var(--text-muted);
+    }
+    .search-box .search-icon {
+      position: absolute;
+      right: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      pointer-events: none;
+    }
+
+    /* 恢复所有分类标题原来的间距 2.5rem */
+    .section-title {
+      font-weight: 700;
+      font-size: 1.35rem;
+      margin: 2.5rem 0 1.25rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--primary);
+      display: inline-block;
+      color: var(--text);
+    }
+
+    /* 仅单独缩减国家筛选栏与下方第一个分类标题之间的空白 */
+    #section-under25 .section-title,
+    #firstSectionTitle {
+      margin-top: 0.5rem !important;
+    }
+
+    .deal-card {
+      border: none;
+      border-radius: 12px;
+      background-color: var(--card-bg);
+      box-shadow: var(--card-shadow);
+      transition: all 0.25s ease;
+      height: 100%;
+      overflow: hidden;
+    }
+    .deal-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--card-hover);
+    }
+    .deal-card .card-header {
+      background: var(--card-bg);
+      border-bottom: 1px solid var(--border);
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 0.55rem 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--text);
+    }
+    .provider-badge {
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.2rem 0.5rem;
+      border-radius: 6px;
+      background: var(--badge-bg);
+      color: var(--badge-color);
+    }
+    .deal-card .card-body { padding: 0.7rem 1rem; }
+
+    /* Compact Temp SMS cards */
+    .deal-card-compact {
+      min-height: auto;
+    }
+    .deal-card-compact .card-body {
+      padding: 0.85rem 0.7rem;
+    }
+    .tempsms-name {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--text);
+      word-break: break-all;
+    }
+
+    .specs {
+      font-size: 0.85rem;
+      line-height: 1.4;
+      color: var(--text-muted);
+      white-space: pre-line;
+      margin-bottom: 0.5rem;
+    }
+
+    .price {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #198754;
+      margin-bottom: 0.45rem;
+    }
+    [data-theme="dark"] .price { color: #75b798; }
+    .price.free { color: #dc3545; }
+    [data-theme="dark"] .price.free { color: #ea868f; }
+    .price .period {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+
+    .btn-buy {
+      border-radius: 8px;
+      font-weight: 600;
+      padding: 0.4rem 0.9rem;
+      width: 100%;
+      font-size: 0.9rem;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 600;
+      padding: 0.12rem 0.4rem;
+      border-radius: 4px;
+      margin-right: 0.25rem;
+      margin-bottom: 0.15rem;
+    }
+    .tag-kvm { background: #d1e7dd; color: #0f5132; }
+    .tag-nvme { background: #cff4fc; color: #055160; }
+    .tag-ssd { background: #cff4fc; color: #055160; }
+    .tag-dedicated { background: #fff3cd; color: #664d03; }
+    .tag-china-optimized { background: #f8d7da; color: #842029; }
+    .tag-storage { background: #e2e3e5; color: #41464b; }
+
+    [data-theme="dark"] .tag-kvm { background: #0f5132; color: #d1e7dd; }
+    [data-theme="dark"] .tag-nvme { background: #055160; color: #cff4fc; }
+    [data-theme="dark"] .tag-ssd { background: #055160; color: #cff4fc; }
+    [data-theme="dark"] .tag-dedicated { background: #664d03; color: #fff3cd; }
+    [data-theme="dark"] .tag-storage { background: #41464b; color: #e2e3e5; }
+    [data-theme="dark"] .tag-China-Optimized { background: #660000; color: #ff9999; } /* 👈 新增：暗黑模式下 CN2 标签的背景和文字颜色 */
+
+    footer {
+      background: var(--footer-bg);
+      color: var(--footer-text);
+      padding: 1.2rem 0;
+      margin-top: 2rem;
+      font-size: 0.88rem;
+    }
+    footer a { color: var(--footer-text); text-decoration: none; }
+    footer a:hover { color: #fff; }
+
+    .filter-btn {
+      border-radius: 20px;
+      font-size: 0.85rem;
+      padding: 0.25rem 0.8rem;
+      margin: 0.15rem;
+    }
+    .filter-btn.active {
+      background-color: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    .no-results {
+      text-align: center;
+      color: var(--text-muted);
+      padding: 2rem 1rem;
+      display: none;
+    }
+
+    .alert-warning {
+      background-color: var(--alert-bg);
+      border-color: var(--alert-border);
+      color: var(--alert-text);
+      padding: 0.6rem 1rem;
+      margin-top: 1.8rem !important;     
+    }
+
+    /* Dark mode toggle button */
+    .theme-toggle {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.3);
+      color: #fff;
+      border-radius: 50%;
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s;
+      margin-left: 0.75rem;
+    }
+    .theme-toggle:hover {
+      background: rgba(255,255,255,0.15);
+    }
+
+    /* External link style for qqvps */
+    .external-section {
+      margin: 2.5rem 0 1.25rem;
+    }
+    .external-link-card {
+      display: block;
+      background: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: var(--card-shadow);
+      padding: 1.5rem 2rem;
+      text-decoration: none;
+      color: var(--text);
+      transition: all 0.25s ease;
+      border: 2px solid transparent;
+    }
+    .external-link-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--card-hover);
+      border-color: var(--primary);
+      color: var(--text);
+    }
+    .external-link-card .title {
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin-bottom: 0.35rem;
+    }
+    .external-link-card .desc {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 576px) {
+      .hero h1 { font-size: 1.5rem; }
+      .section-title { font-size: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="content-wrapper">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">
+          <i class="bi bi-hdd-stack me-1"></i> Cheap VPS Deals
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+          <ul class="navbar-nav ms-auto align-items-lg-center">
+            <li class="nav-item"><a class="nav-link" href="#under25">≤ $25/yr</a></li>
+            <li class="nav-item"><a class="nav-link" href="#under30">≥ $30/yr</a></li>
+            <li class="nav-item"><a class="nav-link" href="#china">China-Optimized</a></li>
+            <li class="nav-item"><a class="nav-link" href="#storage">Storage VPS</a></li>
+            <li class="nav-item"><a class="nav-link" href="#tempsms">Temp SMS</a></li>
+            <li class="nav-item">
+              <button class="theme-toggle" id="themeToggle" title="Toggle dark mode" aria-label="Toggle dark mode">
+                <i class="bi bi-moon-stars-fill" id="themeIcon"></i>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container text-center">
+        <h1><i class="bi bi-lightning-charge-fill me-2"></i>Curated Cheap VPS & Server Deals</h1>
+        <p class="mt-2">Updated regularly · Stock is limited · Don't forget to bookmark!</p>
+        <div class="hero-links">
+          <a href="https://qqvps.cc" target="_blank" rel="noopener">
+            <i class="bi bi-box-arrow-up-right"></i> qqvps.cc
+          </a>
+          <a href="https://t.me/qqvps_cc" target="_blank" rel="noopener">
+            <i class="bi bi-telegram"></i> Telegram Channel
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <!-- Search Box -->
+      <div class="search-box position-relative">
+        <input type="text" id="searchInput" class="form-control" placeholder="Search by provider, plan, location, specs...">
+        <i class="bi bi-search search-icon"></i>
+      </div>
+
+      <!-- Quick filters -->
+      <div class="text-center mb-2">
+        <button class="btn btn-outline-primary filter-btn active" data-filter="all">All</button>
+        <button class="btn btn-outline-primary filter-btn" data-filter="china-optimized">China-Optimized</button>
+        <button class="btn btn-outline-primary filter-btn" data-filter="kvm">KVM</button>
+        <button class="btn btn-outline-primary filter-btn" data-filter="nvme">NVMe</button>
+        <button class="btn btn-outline-primary filter-btn" data-filter="storage">Storage</button>
+        <button class="btn btn-outline-primary filter-btn" data-filter="temp sms">Temp SMS</button>
+      </div>
+
+      <!-- Country filter -->
+      <div class="text-center mb-2" id="countryFilterWrapper">
+        <label for="countryFilter" class="me-2 text-muted" style="font-size: 0.9rem;">Filter by Country:</label>
+        <select id="countryFilter" class="form-select form-select-sm d-inline-block" style="width: auto; min-width: 160px; background-color: var(--input-bg); color: var(--text); border-color: var(--border);">
+          <option value="all">All Countries</option>
+        </select>
+      </div>
+
+      <!-- Sections (auto-filled by JS) -->
+      <div id="section-under25"></div>
+      <div id="section-under30"></div>
+      <div id="section-china"></div>
+      <div id="section-storage"></div>
+      <div id="section-tempsms"></div>
+
+      <!-- No results message -->
+      <div id="noResults" class="no-results">
+        <i class="bi bi-search" style="font-size: 2rem;"></i>
+        <p class="mt-2 mb-0">No deals match your search.</p>
+      </div>
+
+      <!-- Disclaimer -->
+      <div class="alert alert-warning mt-5" role="alert">
+        <i class="bi bi-exclamation-triangle-fill me-2"></i>
+        <strong>Disclaimer:</strong> This site only aggregates publicly available offers. Prices and stock can change at any time. Some links are affiliate links. Please evaluate the provider yourself before purchasing.
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container text-center">
+      <p class="mb-1">Site maintained by <strong>qqvps.cc</strong> · Some links are affiliate.</p>
+      <p class="mb-1">Offer / Stock is not guaranteed.</p>
+      <p class="mb-0">
+        Get Instant Alerts on new VPS deals · 
+        <a href="https://t.me/qqvps_cc" target="_blank" rel="noopener">Telegram Channel</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Data file (edit this one) -->
+  <script src="deals.js"></script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Section titles
+    const sectionConfig = {
+      under25:  { id: "under25",  title: "Annual Deals ≤ $25 / year" },
+      under30:  { id: "under30",  title: "Annual Deals ≥ $30 / year" },
+      china:    { id: "china",    title: "China-Optimized VPS" },
+      storage:  { id: "storage",  title: "Storage VPS" },
+      tempsms:  { id: "tempsms",  title: "Temp SMS" }
+    };
+
+    // Tag display names
+    const tagLabels = {
+      kvm: "KVM",
+      nvme: "NVMe",
+      ssd: "SSD",
+      dedicated: "Dedicated",
+      storage: "Storage",
+      "china-optimized": "China-Optimized",
+      "temp sms": "Temp SMS"
+    };
+
+    let currentFilter = "all";
+    let currentSearch = "";
+    let currentCountry = "all";
+
+    // Create one card
+    function createCard(deal) {
+      const isTempSms = deal.section === "tempsms";
+      const country = deal.country || "";
+      const searchText = [
+        deal.provider,
+        deal.plan,
+        deal.specs,
+        deal.price,
+        country,
+        ...(deal.tags || [])
+      ].join(" ").toLowerCase();
+
+      const tagsHtml = (deal.tags || []).map(t => {
+        const label = tagLabels[t] || t;
+        return `<span class="tag tag-${t}">${label}</span>`;
+      }).join("");
+
+      const isFree = deal.isFree || deal.tags?.includes("free");
+      const priceClass = isFree ? "price free" : "price";
+      const btnClass = isFree ? "btn btn-outline-danger btn-buy" : "btn btn-primary btn-buy";
+
+      // Temp SMS: same card layout as VPS, show intro (specs), no price
+      if (isTempSms) {
+        return `
+          <div class="col-md-6 col-lg-4 col-xl-3 deal-item"
+               data-tags="${(deal.tags || []).join(" ")}"
+               data-country="${country.replace(/"/g, '&quot;')}"
+               data-search="${searchText.replace(/"/g, '&quot;')}">
+            <div class="card deal-card">
+              <div class="card-header">
+                ${deal.provider}
+                <span class="provider-badge">${deal.plan || "Temp SMS"}</span>
+              </div>
+              <div class="card-body">
+                <div class="mb-1">${tagsHtml}</div>
+                <div class="specs">${deal.specs || ""}</div>
+                <a href="${deal.link || "#"}" class="${btnClass}" target="_blank" rel="noopener">${deal.buttonText || "Buy Now"}</a>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+
+      return `
+        <div class="col-md-6 col-lg-4 col-xl-3 deal-item" 
+             data-tags="${(deal.tags || []).join(" ")}"
+             data-country="${country.replace(/"/g, '&quot;')}"
+             data-search="${searchText.replace(/"/g, '&quot;')}">
+          <div class="card deal-card">
+            <div class="card-header">
+              ${deal.provider}
+              <span class="provider-badge">${deal.plan}</span>
+            </div>
+            <div class="card-body">
+              <div class="mb-1">${tagsHtml}</div>
+              <div class="specs">${deal.specs}</div>
+              <div class="${priceClass}">${deal.price} <span class="period">${deal.period || ""}</span></div>
+              <a href="${deal.link || "#"}" class="${btnClass}" target="_blank" rel="noopener">${deal.buttonText || "Buy Now"}</a>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    // Render all sections
+    function renderDeals() {
+      const groups = {};
+      dealsData.forEach(deal => {
+        const key = deal.section || "under25";
+        if (!groups[key]) groups[key] = [];
+        groups[key].push(deal);
+      });
+
+      let isFirstSection = true;
+
+      Object.keys(sectionConfig).forEach(key => {
+        const container = document.getElementById(`section-${key}`);
+        if (!container) return;
+
+        const cfg = sectionConfig[key];
+        const list = groups[key] || [];
+
+        if (list.length === 0) {
+          container.innerHTML = "";
+          return;
+        }
+
+        const titleStyle = isFirstSection ? 'style="margin-top: 0.5rem;"' : '';
+        isFirstSection = false;
+
+        let html = `<h2 id="${cfg.id}" class="section-title" ${titleStyle}>${cfg.title}</h2>`;
+        html += `<div class="row g-3 deal-grid">`;
+        list.forEach(deal => {
+          html += createCard(deal);
+        });
+        html += `</div>`;
+        container.innerHTML = html;
+      });
+
+      applyFilters();
+    }
+
+    // Apply tag filter + country filter + search
+    function applyFilters() {
+      let visibleCount = 0;
+
+      document.querySelectorAll(".deal-item").forEach(item => {
+        const tags = item.dataset.tags || "";
+        const searchText = item.dataset.search || "";
+        const country = (item.dataset.country || "").toLowerCase();
+
+        const matchFilter = currentFilter === "all" || tags.includes(currentFilter);
+        const matchCountry = currentCountry === "all" || country.includes(currentCountry.toLowerCase());
+        const matchSearch = !currentSearch || searchText.includes(currentSearch);
+
+        if (matchFilter && matchCountry && matchSearch) {
+          item.style.display = "";
+          visibleCount++;
+        } else {
+          item.style.display = "none";
+        }
+      });
+
+      // Hide empty section titles, and ensure the FIRST VISIBLE section title gets a small margin-top
+      let foundFirstVisible = false;
+      document.querySelectorAll("[id^='section-']").forEach(section => {
+        const items = section.querySelectorAll(".deal-item");
+        let anyVisible = false;
+        items.forEach(i => {
+          if (i.style.display !== "none") anyVisible = true;
+        });
+        if (anyVisible) {
+          section.style.display = "";
+          const h2 = section.querySelector(".section-title");
+          if (h2) {
+            if (!foundFirstVisible) {
+              h2.style.marginTop = "0.5rem";
+              foundFirstVisible = true;
+            } else {
+              h2.style.marginTop = "2.5rem";
+            }
+          }
+        } else {
+          section.style.display = "none";
+        }
+      });
+
+      document.getElementById("noResults").style.display = visibleCount === 0 ? "block" : "none";
+    }
+
+    // Populate country dropdown from deals data
+    function populateCountryFilter() {
+      const select = document.getElementById("countryFilter");
+      if (!select) return;
+
+      const countries = new Set();
+      dealsData.forEach(deal => {
+        if (deal.country) {
+          // Split multi-country values like "US / EU" or "Luxembourg / US"
+          deal.country.split(/[\/,]/).forEach(c => {
+            const trimmed = c.trim();
+            if (trimmed) countries.add(trimmed);
+          });
+        }
+      });
+
+      // Sort alphabetically
+      const sorted = Array.from(countries).sort((a, b) => a.localeCompare(b));
+      sorted.forEach(c => {
+        const opt = document.createElement("option");
+        opt.value = c;
+        opt.textContent = c;
+        select.appendChild(opt);
+      });
+    }
+
+    // Setup filters + search
+    function setupControls() {
+      document.querySelectorAll(".filter-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+          btn.classList.add("active");
+          currentFilter = btn.dataset.filter;
+          applyFilters();
+        });
+      });
+
+      const searchInput = document.getElementById("searchInput");
+      searchInput.addEventListener("input", () => {
+        currentSearch = searchInput.value.trim().toLowerCase();
+        applyFilters();
+      });
+
+      const countrySelect = document.getElementById("countryFilter");
+      if (countrySelect) {
+        countrySelect.addEventListener("change", () => {
+          currentCountry = countrySelect.value;
+          applyFilters();
+        });
+      }
+    }
+
+    // Dark mode
+    function setupTheme() {
+      const toggle = document.getElementById("themeToggle");
+      const icon = document.getElementById("themeIcon");
+      const html = document.documentElement;
+
+      // Load saved preference
+      const saved = localStorage.getItem("theme");
+      if (saved === "dark" || (!saved && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+        html.setAttribute("data-theme", "dark");
+        icon.className = "bi bi-sun-fill";
+      }
+
+      toggle.addEventListener("click", () => {
+        const isDark = html.getAttribute("data-theme") === "dark";
+        if (isDark) {
+          html.removeAttribute("data-theme");
+          icon.className = "bi bi-moon-stars-fill";
+          localStorage.setItem("theme", "light");
+        } else {
+          html.setAttribute("data-theme", "dark");
+          icon.className = "bi bi-sun-fill";
+          localStorage.setItem("theme", "dark");
+        }
+      });
+    }
+
+    // Start
+    document.addEventListener("DOMContentLoaded", () => {
+      populateCountryFilter();
+      renderDeals();
+      setupControls();
+      setupTheme();
+    });
+  </script>
+</body>
+</html>
