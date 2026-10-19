@@ -62,6 +62,24 @@ Multiple Global Locations`,
   },
   {
     section: "under25",
+    provider: "DediRock",
+    plan: "1 vCPU - 2GB RAM",
+    tags: ["kvm", "ssd"],
+    country: "USA",
+    specs: `1 vCPU
+2GB RAM
+20GB SSD
+2000G Bandwidth
+1× IPv4
+1Gbps Port
+Los Angeles, US`,
+    price: "$17.88",
+    period: "/ year",
+    link: "https://billing.dedirock.com/aff.php?aff=7&pid=126",
+    buttonText: "Buy Now"
+  },
+  {
+    section: "under25",
     provider: "RackNerd",
     plan: "1 vCPU - 1GB RAM",
     tags: ["kvm", "ssd"],
@@ -452,16 +470,6 @@ One-time & rental numbers`,
   },
   {
     section: "tempsms",
-    provider: "SMS-Activation-Service",
-    plan: "SMS",
-    tags: ["temp sms"],
-    specs: `200+ countries, 1000+ services
-One-time & rental numbers`,
-    link: "https://sms-verification-number.com/cn/?ref=1708659716",
-    buttonText: "Buy Now"
-  },
-  {
-    section: "tempsms",
     provider: "Hero SMS",
     plan: "SMS",
     tags: ["temp sms"],
@@ -488,16 +496,6 @@ One-time & rental numbers`,
     specs: `100+ countries · 1000+ services
 One-time & rental numbers`,
     link: "https://onlinesim.io/?aref=9631609",
-    buttonText: "Buy Now"
-  },
-  {
-    section: "tempsms",
-    provider: "Grizzly SMS",
-    plan: "SMS",
-    tags: ["temp sms"],
-    specs: `150+ countries · 1000+ services
-One-time & rental numbers`,
-    link: "https://grizzlysms.com/cn/?r=1921094",
     buttonText: "Buy Now"
   },
 
