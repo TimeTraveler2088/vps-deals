@@ -421,7 +421,7 @@ Multiple Global Locations`,
   {
     section: "storage",
     provider: "DediRock",
-    plan: "1 vCPU - 2GB RAM",
+    plan: "Storage 256G SSD",
     tags: ["kvm", "ssd"],
     country: "USA",
     specs: `1 vCPU
