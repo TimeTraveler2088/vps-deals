@@ -19,7 +19,7 @@ const dealsData = [
 1× IPv4
 1Gbps Port
 New York, US`,
-    price: "$9.88",
+    price: "$9.8",
     period: "/ year",
     link: "https://billing.dedirock.com/aff.php?aff=7&pid=264",                    // 购买链接，改成真实链接
     buttonText: "Buy Now"
@@ -37,7 +37,7 @@ New York, US`,
 1× IPv4
 1Gbps Port
 Los Angeles, US`,
-    price: "$10.88",
+    price: "$10.8",
     period: "/ year",
     link: "https://billing.dedirock.com/aff.php?aff=7&pid=265",
     buttonText: "Buy Now"
@@ -55,7 +55,7 @@ Los Angeles, US`,
 1× IPv4 + /64 IPv6
 2.5Gbps Port
 Multiple Global Locations`,
-    price: "$14.71",
+    price: "$14.7",
     period: "/ year",
     link: "https://bitsflow.cloud/26-aut-yp.html",
     buttonText: "Buy Now"
@@ -73,7 +73,7 @@ Multiple Global Locations`,
 1× IPv4
 1Gbps Port
 Los Angeles, US`,
-    price: "$17.88",
+    price: "$17.8",
     period: "/ year",
     link: "https://billing.dedirock.com/aff.php?aff=7&pid=126",
     buttonText: "Buy Now"
@@ -375,7 +375,7 @@ CN2 GIA`,
 1× IPv4
 1Gbps Port
 New York, US`,
-    price: "$17.68",
+    price: "$17.6",
     period: "/ year",
     link: "https://billing.dedirock.com/aff.php?aff=7&pid=107",
     buttonText: "Buy Now"
@@ -418,6 +418,24 @@ Multiple Global Locations`,
     link: "https://greencloudvps.com/billing/aff.php?aff=8417&gid=73",
     buttonText: "Buy Now"
   },
+  {
+    section: "storage",
+    provider: "DediRock",
+    plan: "Storage 256G SSD",
+    tags: ["kvm", "ssd"],
+    country: "USA",
+    specs: `1 vCPU
+2GB RAM
+256GB SSD
+2000G Bandwidth
+1× IPv4
+1Gbps Port
+Los Angeles, US`,
+    price: "$28.9",
+    period: "/ year",
+    link: "https://billing.dedirock.com/aff.php?aff=7&pid=265",
+    buttonText: "Buy Now"
+  },   
   {
     section: "storage",
     provider: "HostBrr",
