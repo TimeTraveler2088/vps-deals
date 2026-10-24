@@ -434,7 +434,8 @@ Los Angeles, US`,
     price: "$28.9",
     period: "/ year",
     link: "https://billing.dedirock.com/aff.php?aff=7&pid=265",
-    buttonText: "Buy Now"  
+    buttonText: "Buy Now"
+  },   
   {
     section: "storage",
     provider: "HostBrr",
