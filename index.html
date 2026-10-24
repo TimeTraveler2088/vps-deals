@@ -1,6 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//matomo.aibbb.de/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '2']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Cheap VPS & Server Deals - Curated low-end VPS and server offers">
@@ -318,6 +334,26 @@
       background: rgba(255,255,255,0.15);
     }
 
+    .lang-toggle {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.3);
+      color: #fff;
+      border-radius: 50px;
+      height: 38px;
+      padding: 0 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s;
+      margin-left: 0.5rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+    .lang-toggle:hover {
+      background: rgba(255,255,255,0.15);
+    }
+
     /* External link style for qqvps */
     .external-section {
       margin: 2.5rem 0 1.25rem;
@@ -369,11 +405,14 @@
         </button>
         <div class="collapse navbar-collapse" id="navMenu">
           <ul class="navbar-nav ms-auto align-items-lg-center">
-            <li class="nav-item"><a class="nav-link" href="#under25">≤ $25/yr</a></li>
-            <li class="nav-item"><a class="nav-link" href="#under30">≥ $30/yr</a></li>
-            <li class="nav-item"><a class="nav-link" href="#china">China-Optimized</a></li>
-            <li class="nav-item"><a class="nav-link" href="#storage">Storage VPS</a></li>
-            <li class="nav-item"><a class="nav-link" href="#tempsms">Temp SMS</a></li>
+            <li class="nav-item"><a class="nav-link" href="#under25" data-i18n="nav_under25">≤ $25/yr</a></li>
+            <li class="nav-item"><a class="nav-link" href="#under30" data-i18n="nav_under30">≥ $30/yr</a></li>
+            <li class="nav-item"><a class="nav-link" href="#china" data-i18n="nav_china">China-Optimized</a></li>
+            <li class="nav-item"><a class="nav-link" href="#storage" data-i18n="nav_storage">Storage VPS</a></li>
+            <li class="nav-item"><a class="nav-link" href="#tempsms" data-i18n="nav_tempsms">Temp SMS</a></li>
+            <li class="nav-item">
+              <button class="lang-toggle" id="langToggle" title="Switch language" aria-label="Switch language">中文</button>
+            </li>
             <li class="nav-item">
               <button class="theme-toggle" id="themeToggle" title="Toggle dark mode" aria-label="Toggle dark mode">
                 <i class="bi bi-moon-stars-fill" id="themeIcon"></i>
@@ -387,14 +426,14 @@
     <!-- Hero -->
     <section class="hero">
       <div class="container text-center">
-        <h1><i class="bi bi-lightning-charge-fill me-2"></i>Curated Cheap VPS & Server Deals</h1>
-        <p class="mt-2">Updated regularly · Stock is limited · Don't forget to bookmark!</p>
+        <h1><i class="bi bi-lightning-charge-fill me-2"></i><span data-i18n="hero_title">Curated Cheap VPS & Server Deals</span></h1>
+        <p class="mt-2" data-i18n="hero_sub">Updated regularly · Stock is limited · Don't forget to bookmark!</p>
         <div class="hero-links">
           <a href="https://qqvps.cc" target="_blank" rel="noopener">
             <i class="bi bi-box-arrow-up-right"></i> qqvps.cc
           </a>
           <a href="https://t.me/qqvps_cc" target="_blank" rel="noopener">
-            <i class="bi bi-telegram"></i> Telegram Channel
+            <i class="bi bi-telegram"></i> <span data-i18n="telegram">Telegram Channel</span>
           </a>
         </div>
       </div>
@@ -403,24 +442,24 @@
     <div class="container">
       <!-- Search Box -->
       <div class="search-box position-relative">
-        <input type="text" id="searchInput" class="form-control" placeholder="Search by provider, plan, location, specs...">
+        <input type="text" id="searchInput" class="form-control" placeholder="Search by provider, plan, location, specs..." data-i18n-placeholder="search_ph">
         <i class="bi bi-search search-icon"></i>
       </div>
 
       <!-- Quick filters -->
       <div class="text-center mb-2">
-        <button class="btn btn-outline-primary filter-btn active" data-filter="all">All</button>
-        <button class="btn btn-outline-primary filter-btn" data-filter="china-optimized">China-Optimized</button>
+        <button class="btn btn-outline-primary filter-btn active" data-filter="all" data-i18n="filter_all">All</button>
+        <button class="btn btn-outline-primary filter-btn" data-filter="china-optimized" data-i18n="filter_china">China-Optimized</button>
         <button class="btn btn-outline-primary filter-btn" data-filter="nvme">NVMe</button>
-        <button class="btn btn-outline-primary filter-btn" data-filter="storage">Storage</button>
-        <button class="btn btn-outline-primary filter-btn" data-filter="temp sms">Temp SMS</button>
+        <button class="btn btn-outline-primary filter-btn" data-filter="storage" data-i18n="filter_storage">Storage</button>
+        <button class="btn btn-outline-primary filter-btn" data-filter="temp sms" data-i18n="filter_tempsms">Temp SMS</button>
       </div>
 
       <!-- Country filter -->
       <div class="text-center mb-2" id="countryFilterWrapper">
-        <label for="countryFilter" class="me-2 text-muted" style="font-size: 0.9rem;">Filter by Country:</label>
+        <label for="countryFilter" class="me-2 text-muted" style="font-size: 0.9rem;" data-i18n="country_label">Filter by Country:</label>
         <select id="countryFilter" class="form-select form-select-sm d-inline-block" style="width: auto; min-width: 160px; background-color: var(--input-bg); color: var(--text); border-color: var(--border);">
-          <option value="all">All Countries</option>
+          <option value="all" data-i18n="country_all">All Countries</option>
         </select>
       </div>
 
@@ -434,13 +473,13 @@
       <!-- No results message -->
       <div id="noResults" class="no-results">
         <i class="bi bi-search" style="font-size: 2rem;"></i>
-        <p class="mt-2 mb-0">No deals match your search.</p>
+        <p class="mt-2 mb-0" data-i18n="no_results">No deals match your search.</p>
       </div>
 
       <!-- Disclaimer -->
       <div class="alert alert-warning mt-5" role="alert">
         <i class="bi bi-exclamation-triangle-fill me-2"></i>
-        <strong>Disclaimer:</strong> This site only aggregates publicly available offers. Prices and stock can change at any time. Some links are affiliate links. Please evaluate the provider yourself before purchasing.
+        <strong data-i18n="disclaimer_title">Disclaimer:</strong> <span data-i18n="disclaimer_body">This site only aggregates publicly available offers. Prices and stock can change at any time. Some links are affiliate links. Please evaluate the provider yourself before purchasing.</span>
       </div>
     </div>
   </div>
@@ -448,11 +487,11 @@
   <!-- Footer -->
   <footer>
     <div class="container text-center">
-      <p class="mb-1">Site maintained by <strong>qqvps.cc</strong> · Some links are affiliate.</p>
-      <p class="mb-1">Offer / Stock is not guaranteed.</p>
+      <p class="mb-1" data-i18n="footer_maintained">Site maintained by <strong>qqvps.cc</strong> · Some links are affiliate.</p>
+      <p class="mb-1" data-i18n="footer_stock">Offer / Stock is not guaranteed.</p>
       <p class="mb-0">
-        Get Instant Alerts on new VPS deals · 
-        <a href="https://t.me/qqvps_cc" target="_blank" rel="noopener">Telegram Channel</a>
+        <span data-i18n="footer_alerts">Get Instant Alerts on new VPS deals</span> · 
+        <a href="https://t.me/qqvps_cc" target="_blank" rel="noopener" data-i18n="telegram">Telegram Channel</a>
       </p>
     </div>
   </footer>
@@ -464,16 +503,119 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
   <script>
-    // Section titles
-    const sectionConfig = {
-      under25:  { id: "under25",  title: "Annual Deals ≤ $25 / year" },
-      under30:  { id: "under30",  title: "Annual Deals ≥ $30 / year" },
-      china:    { id: "china",    title: "China-Optimized VPS" },
-      storage:  { id: "storage",  title: "Storage VPS" },
-      tempsms:  { id: "tempsms",  title: "Temp SMS" }
+    // ========== i18n ==========
+    const i18n = {
+      en: {
+        nav_under25: "≤ $25/yr",
+        nav_under30: "≥ $30/yr",
+        nav_china: "China-Optimized",
+        nav_storage: "Storage VPS",
+        nav_tempsms: "Temp SMS",
+        hero_title: "Curated Cheap VPS & Server Deals",
+        hero_sub: "Updated regularly · Stock is limited · Don't forget to bookmark!",
+        telegram: "Telegram Channel",
+        search_ph: "Search by provider, plan, location, specs...",
+        filter_all: "All",
+        filter_china: "China-Optimized",
+        filter_storage: "Storage",
+        filter_tempsms: "Temp SMS",
+        country_label: "Filter by Country:",
+        country_all: "All Countries",
+        no_results: "No deals match your search.",
+        disclaimer_title: "Disclaimer:",
+        disclaimer_body: "This site only aggregates publicly available offers. Prices and stock can change at any time. Some links are affiliate links. Please evaluate the provider yourself before purchasing.",
+        footer_maintained: "Site maintained by <strong>qqvps.cc</strong> · Some links are affiliate.",
+        footer_stock: "Offer / Stock is not guaranteed.",
+        footer_alerts: "Get Instant Alerts on new VPS deals",
+        buy_now: "Buy Now",
+        section_under25: "Annual Deals ≤ $25 / year",
+        section_under30: "Annual Deals ≥ $30 / year",
+        section_china: "China-Optimized VPS",
+        section_storage: "Storage VPS",
+        section_tempsms: "Temp SMS",
+        brand: "Cheap VPS Deals",
+        lang_btn: "中文"
+      },
+      zh: {
+        nav_under25: "≤ $25/年",
+        nav_under30: "≥ $30/年",
+        nav_china: "优化线路",
+        nav_storage: "存储型 VPS",
+        nav_tempsms: "临时短信",
+        hero_title: "精选低价 VPS 与服务器优惠",
+        hero_sub: "定期更新 · 库存有限 · 记得收藏本站！",
+        telegram: "Telegram 频道",
+        search_ph: "搜索商家、套餐、地区、配置…",
+        filter_all: "全部",
+        filter_china: "优化线路",
+        filter_storage: "存储型",
+        filter_tempsms: "临时短信",
+        country_label: "按国家筛选：",
+        country_all: "全部国家",
+        no_results: "没有符合条件的优惠。",
+        disclaimer_title: "免责声明：",
+        disclaimer_body: "本站仅整理公开优惠信息，价格与库存可能随时变化。部分链接为联盟链接。请自行评估商家后再购买。",
+        footer_maintained: "本站由 <strong>qqvps.cc</strong> 维护 · 部分链接为联盟链接。",
+        footer_stock: "优惠与库存不保证。",
+        footer_alerts: "获取最新 VPS 优惠提醒",
+        buy_now: "立即购买",
+        section_under25: "年付优惠 ≤ $25",
+        section_under30: "年付优惠 ≥ $30",
+        section_china: "优化线路 VPS",
+        section_storage: "存储型 VPS",
+        section_tempsms: "临时短信",
+        brand: "便宜 VPS 优惠",
+        lang_btn: "EN"
+      }
     };
 
-    // Tag display names
+    let currentLang = "en";
+
+    function detectLang() {
+      const saved = localStorage.getItem("site_lang");
+      if (saved === "zh" || saved === "en") return saved;
+      const langs = (navigator.languages || [navigator.language || "en"]).map(l => (l || "").toLowerCase());
+      if (langs.some(l => l.startsWith("zh"))) return "zh";
+      return "en";
+    }
+
+    function t(key) {
+      return (i18n[currentLang] && i18n[currentLang][key]) || (i18n.en[key] || key);
+    }
+
+    function applyI18n() {
+      document.documentElement.lang = currentLang === "zh" ? "zh-CN" : "en";
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        const val = t(key);
+        if (val.includes("<")) el.innerHTML = val;
+        else el.textContent = val;
+      });
+      document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
+        el.placeholder = t(el.getAttribute("data-i18n-placeholder"));
+      });
+      const brand = document.querySelector(".navbar-brand");
+      if (brand) {
+        brand.innerHTML = '<i class="bi bi-hdd-stack me-1"></i> ' + t("brand");
+      }
+      const langBtn = document.getElementById("langToggle");
+      if (langBtn) langBtn.textContent = t("lang_btn");
+      // Update "All Countries" option if still present
+      const allOpt = document.querySelector('#countryFilter option[value="all"]');
+      if (allOpt) allOpt.textContent = t("country_all");
+    }
+
+    function getSectionConfig() {
+      return {
+        under25:  { id: "under25",  title: t("section_under25") },
+        under30:  { id: "under30",  title: t("section_under30") },
+        china:    { id: "china",    title: t("section_china") },
+        storage:  { id: "storage",  title: t("section_storage") },
+        tempsms:  { id: "tempsms",  title: t("section_tempsms") }
+      };
+    }
+
+    // Tag display names (technical terms stay EN)
     const tagLabels = {
       kvm: "KVM",
       nvme: "NVMe",
@@ -488,7 +630,6 @@
     let currentSearch = "";
     let currentCountry = "all";
 
-    // Create one card
     function createCard(deal) {
       const isTempSms = deal.section === "tempsms";
       const country = deal.country || "";
@@ -501,16 +642,16 @@
         ...(deal.tags || [])
       ].join(" ").toLowerCase();
 
-      const tagsHtml = (deal.tags || []).map(t => {
-        const label = tagLabels[t] || t;
-        return `<span class="tag tag-${t}">${label}</span>`;
+      const tagsHtml = (deal.tags || []).map(tg => {
+        const label = tagLabels[tg] || tg;
+        return `<span class="tag tag-${tg}">${label}</span>`;
       }).join("");
 
       const isFree = deal.isFree || deal.tags?.includes("free");
       const priceClass = isFree ? "price free" : "price";
       const btnClass = isFree ? "btn btn-outline-danger btn-buy" : "btn btn-primary btn-buy";
+      const btnText = deal.buttonText || t("buy_now");
 
-      // Temp SMS: same card layout as VPS, show intro (specs), no price
       if (isTempSms) {
         return `
           <div class="col-md-6 col-lg-4 col-xl-3 deal-item"
@@ -525,7 +666,7 @@
               <div class="card-body">
                 <div class="mb-1">${tagsHtml}</div>
                 <div class="specs">${deal.specs || ""}</div>
-                <a href="${deal.link || "#"}" class="${btnClass}" target="_blank" rel="noopener">${deal.buttonText || "Buy Now"}</a>
+                <a href="${deal.link || "#"}" class="${btnClass}" target="_blank" rel="noopener">${btnText}</a>
               </div>
             </div>
           </div>
@@ -546,17 +687,17 @@
               <div class="mb-1">${tagsHtml}</div>
               <div class="specs">${deal.specs}</div>
               <div class="${priceClass}">${deal.price} <span class="period">${deal.period || ""}</span></div>
-              <a href="${deal.link || "#"}" class="${btnClass}" target="_blank" rel="noopener">${deal.buttonText || "Buy Now"}</a>
+              <a href="${deal.link || "#"}" class="${btnClass}" target="_blank" rel="noopener">${btnText}</a>
             </div>
           </div>
         </div>
       `;
     }
 
-    // Render all sections
     function renderDeals() {
+      const sectionConfig = getSectionConfig();
       const groups = {};
-      dealsData.forEach(deal => {
+      (typeof dealsData !== "undefined" ? dealsData : []).forEach(deal => {
         const key = deal.section || "under25";
         if (!groups[key]) groups[key] = [];
         groups[key].push(deal);
@@ -581,9 +722,7 @@
 
         let html = `<h2 id="${cfg.id}" class="section-title" ${titleStyle}>${cfg.title}</h2>`;
         html += `<div class="row g-3 deal-grid">`;
-        list.forEach(deal => {
-          html += createCard(deal);
-        });
+        list.forEach(deal => { html += createCard(deal); });
         html += `</div>`;
         container.innerHTML = html;
       });
@@ -591,7 +730,6 @@
       applyFilters();
     }
 
-    // Apply tag filter + country filter + search
     function applyFilters() {
       let visibleCount = 0;
 
@@ -612,7 +750,6 @@
         }
       });
 
-      // Hide empty section titles, and ensure the FIRST VISIBLE section title gets a small margin-top
       let foundFirstVisible = false;
       document.querySelectorAll("[id^='section-']").forEach(section => {
         const items = section.querySelectorAll(".deal-item");
@@ -639,15 +776,16 @@
       document.getElementById("noResults").style.display = visibleCount === 0 ? "block" : "none";
     }
 
-    // Populate country dropdown from deals data
     function populateCountryFilter() {
       const select = document.getElementById("countryFilter");
       if (!select) return;
 
+      // Keep first option, clear the rest
+      while (select.options.length > 1) select.remove(1);
+
       const countries = new Set();
-      dealsData.forEach(deal => {
+      (typeof dealsData !== "undefined" ? dealsData : []).forEach(deal => {
         if (deal.country) {
-          // Split multi-country values like "US / EU" or "Luxembourg / US"
           deal.country.split(/[\/,]/).forEach(c => {
             const trimmed = c.trim();
             if (trimmed) countries.add(trimmed);
@@ -655,17 +793,17 @@
         }
       });
 
-      // Sort alphabetically
-      const sorted = Array.from(countries).sort((a, b) => a.localeCompare(b));
-      sorted.forEach(c => {
+      Array.from(countries).sort((a, b) => a.localeCompare(b)).forEach(c => {
         const opt = document.createElement("option");
         opt.value = c;
         opt.textContent = c;
         select.appendChild(opt);
       });
+
+      const allOpt = select.querySelector('option[value="all"]');
+      if (allOpt) allOpt.textContent = t("country_all");
     }
 
-    // Setup filters + search
     function setupControls() {
       document.querySelectorAll(".filter-btn").forEach(btn => {
         btn.addEventListener("click", () => {
@@ -689,15 +827,24 @@
           applyFilters();
         });
       }
+
+      const langBtn = document.getElementById("langToggle");
+      if (langBtn) {
+        langBtn.addEventListener("click", () => {
+          currentLang = currentLang === "zh" ? "en" : "zh";
+          localStorage.setItem("site_lang", currentLang);
+          applyI18n();
+          populateCountryFilter();
+          renderDeals();
+        });
+      }
     }
 
-    // Dark mode
     function setupTheme() {
       const toggle = document.getElementById("themeToggle");
       const icon = document.getElementById("themeIcon");
       const html = document.documentElement;
 
-      // Load saved preference
       const saved = localStorage.getItem("theme");
       if (saved === "dark" || (!saved && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
         html.setAttribute("data-theme", "dark");
@@ -718,13 +865,15 @@
       });
     }
 
-    // Start
     document.addEventListener("DOMContentLoaded", () => {
+      currentLang = detectLang();
+      applyI18n();
       populateCountryFilter();
       renderDeals();
       setupControls();
       setupTheme();
     });
   </script>
+
 </body>
 </html>
