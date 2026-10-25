@@ -1,18 +1,28 @@
 // ============================================
 //  Deals Data File - Edit ONLY this file
 //  Add / remove / update deals here
+//
+//  Language (works with index.html i18n):
+//  - Chinese visitors see 立即购买, / 年 / 月, and optional *Zh fields
+//  - English visitors see Buy Now, / year, and default fields
+//  - Manual language switch uses the same rules
+//
+//  Optional Chinese fields (only when you need different text):
+//    planZh, specsZh, periodZh, buttonTextZh
+//  If omitted, English fields are used; period is auto-translated
+//  (/ year → / 年, / month → / 月, / quarter → / 季)
 // ============================================
 
 const dealsData = [
 
   // ---------- ≤ $25 / year ----------
   {
-    section: "under25",           // 所属分区：under25 / under30 / China / storage / tempsms
-    provider: "DediRock",         // 商家名称
-    plan: "1 vCPU - 2GB RAM",     // 套餐规格
-    tags: [ "kvm", "ssd"],         // 标签：china-optimized / kvm / nvme / dedicated / storage
-    country: "USA",                // 国家
-    specs: `1 vCPU                
+    section: "under25",
+    provider: "DediRock",
+    plan: "1 vCPU - 2GB RAM",
+    tags: ["kvm", "ssd"],
+    country: "USA",
+    specs: `1 vCPU
 2GB RAM
 30GB SSD
 2000G Bandwidth
@@ -21,7 +31,7 @@ const dealsData = [
 New York, US`,
     price: "$9.8",
     period: "/ year",
-    link: "https://billing.dedirock.com/aff.php?aff=7&pid=264",                    // 购买链接，改成真实链接
+    link: "https://billing.dedirock.com/aff.php?aff=7&pid=264",
     buttonText: "Buy Now"
   },
   {
@@ -46,7 +56,7 @@ Los Angeles, US`,
     section: "under25",
     provider: "BitsFlow",
     plan: "1 vCPU - 1GB RAM",
-    tags: ["kvm","nvme"],
+    tags: ["kvm", "nvme"],
     country: "USA, Germany, United Kingdom, Hong Kong, Japan",
     specs: `1 vCPU
 1GB RAM
@@ -90,7 +100,7 @@ Los Angeles, US`,
 3000G Bandwidth
 1× IPv4
 1Gbps Port
-Multiple Locations，US`,
+Multiple Locations, US`,
     price: "$21.9",
     period: "/ year",
     link: "https://my.racknerd.com/aff.php?aff=12581&pid=952",
@@ -100,7 +110,7 @@ Multiple Locations，US`,
     section: "under25",
     provider: "BitsFlow",
     plan: "1 vCPU - 1GB RAM",
-    tags: ["kvm","nvme"],
+    tags: ["kvm", "nvme"],
     country: "USA, Germany, United Kingdom, Hong Kong, Japan",
     specs: `1 vCPU
 1GB RAM
@@ -108,7 +118,7 @@ Multiple Locations，US`,
 2000G Bandwidth
 1× IPv4 + /64 IPv6
 2.5Gbps Port
-Multiple Global Locations,Japan`,
+Multiple Global Locations, Japan`,
     price: "$28",
     period: "/ year",
     link: "https://ccp.bitsflow.cloud/order/main/packages/fcf26-tyo/?group_id=53&a=Njk2",
@@ -164,7 +174,7 @@ Japan`,
 5000G Bandwidth
 1× IPv4
 1Gbps Port
-Multiple Locations，US`,
+Multiple Locations, US`,
     price: "$35.9",
     period: "/ year",
     link: "https://my.racknerd.com/aff.php?aff=12581&pid=953",
@@ -182,7 +192,7 @@ Multiple Locations，US`,
 7000G Bandwidth
 1× IPv4
 1Gbps Port
-Multiple Locations，US`,
+Multiple Locations, US`,
     price: "$59.9",
     period: "/ year",
     link: "https://my.racknerd.com/aff.php?aff=12581&pid=954",
@@ -200,13 +210,13 @@ Multiple Locations，US`,
 12000G Bandwidth
 1× IPv4
 1Gbps Port
-Multiple Locations，US`,
+Multiple Locations, US`,
     price: "$89.9",
     period: "/ year",
     link: "https://my.racknerd.com/aff.php?aff=12581&pid=955",
     buttonText: "Buy Now"
   },
-    {
+  {
     section: "under30",
     provider: "RackNerd",
     plan: "7 vCPU - 8GB RAM",
@@ -218,7 +228,7 @@ Multiple Locations，US`,
 20000G Bandwidth
 1× IPv4
 1Gbps Port
-Multiple Locations，US`,
+Multiple Locations, US`,
     price: "$119.9",
     period: "/ year",
     link: "https://my.racknerd.com/aff.php?aff=12581&pid=956",
@@ -268,7 +278,7 @@ CN2 GIA & AS9929 & CMIN2`,
     section: "china",
     provider: "DMIT",
     plan: "CN2 GIA",
-    tags: ["kvm", "ssd" , "china-optimized"],
+    tags: ["kvm", "ssd", "china-optimized"],
     country: "Hong Kong",
     specs: `1 vCPU
 1GB RAM
@@ -287,7 +297,7 @@ CN2 GIA`,
     section: "china",
     provider: "BandwagonHost",
     plan: "CN2 GIA",
-    tags: ["kvm", "ssd" , "china-optimized"],
+    tags: ["kvm", "ssd", "china-optimized"],
     country: "USA",
     specs: `2 vCPU
 1GB RAM
@@ -306,7 +316,7 @@ CN2 GIA`,
     section: "china",
     provider: "BandwagonHost",
     plan: "CN2 GIA",
-    tags: ["kvm", "ssd" , "china-optimized"],
+    tags: ["kvm", "ssd", "china-optimized"],
     country: "Japan",
     specs: `2 vCPU
 2GB RAM
@@ -320,12 +330,12 @@ CN2 GIA`,
     period: "/ month",
     link: "https://bwh89.net/aff.php?aff=76203&pid=134",
     buttonText: "Buy Now"
-  },  
- {
+  },
+  {
     section: "china",
     provider: "BandwagonHost",
     plan: "CN2 GIA",
-    tags: ["kvm", "ssd" , "china-optimized"],
+    tags: ["kvm", "ssd", "china-optimized"],
     country: "Hong Kong",
     specs: `2 vCPU
 2GB RAM
@@ -339,12 +349,12 @@ CN2 GIA`,
     period: "/ month",
     link: "https://bwh89.net/aff.php?aff=76203&pid=95",
     buttonText: "Buy Now"
-  },  
+  },
   {
     section: "china",
     provider: "BandwagonHost",
     plan: "CN2 GIA",
-    tags: ["kvm", "ssd" , "china-optimized"],
+    tags: ["kvm", "ssd", "china-optimized"],
     country: "Japan",
     specs: `2 vCPU
 2GB RAM
@@ -358,7 +368,7 @@ CN2 GIA`,
     period: "/ month",
     link: "https://bwh89.net/aff.php?aff=76203&pid=108",
     buttonText: "Buy Now"
-  },  
+  },
 
   // ---------- Storage VPS ----------
   {
@@ -370,7 +380,6 @@ CN2 GIA`,
     specs: `1 vCPU
 1GB RAM
 1000GB HDD
-
 2000G Bandwidth
 1× IPv4
 1Gbps Port
@@ -381,15 +390,14 @@ New York, US`,
     buttonText: "Buy Now"
   },
   {
-    section: "month",
+    section: "storage",
     provider: "AlphaVPS",
     plan: "Storage 128G",
     tags: ["kvm", "storage"],
-    country: "USA",
+    country: "Bulgaria",
     specs: `1 vCPU
 512M RAM
 128GB RAID60 HDD
-
 500G Bandwidth
 1× IPv4 + /64 IPv6
 10Gbps Port
@@ -435,7 +443,7 @@ Los Angeles, US`,
     period: "/ year",
     link: "https://billing.dedirock.com/aff.php?aff=7&pid=265",
     buttonText: "Buy Now"
-  },   
+  },
   {
     section: "storage",
     provider: "HostBrr",
@@ -480,41 +488,57 @@ Multiple Global Locations`,
     section: "tempsms",
     provider: "SMS-MAN",
     plan: "SMS",
+    planZh: "短信",
     tags: ["temp sms"],
     specs: `180+ countries · 1000+ services
 One-time & rental numbers`,
+    specsZh: `180+ 国家 · 1000+ 服务
+一次性号码 & 租用号码`,
     link: "https://sms-man.com/cn?ref=kYAjrypNLrYB",
-    buttonText: "Buy Now"
+    buttonText: "Buy Now",
+    buttonTextZh: "立即购买"
   },
   {
     section: "tempsms",
     provider: "Hero SMS",
     plan: "SMS",
+    planZh: "短信",
     tags: ["temp sms"],
     specs: `180+ countries · 700+ services
 One-time & rental numbers`,
+    specsZh: `180+ 国家 · 700+ 服务
+一次性号码 & 租用号码`,
     link: "https://hero-sms.com/?ref=1827954",
-    buttonText: "Buy Now"
+    buttonText: "Buy Now",
+    buttonTextZh: "立即购买"
   },
   {
     section: "tempsms",
     provider: "Tiger SMS",
     plan: "SMS",
+    planZh: "短信",
     tags: ["temp sms"],
     specs: `100+ countries · 300+ services
 One-time & rental numbers`,
+    specsZh: `100+ 国家 · 300+ 服务
+一次性号码 & 租用号码`,
     link: "https://tiger-sms.com/r/8cdtzmmj",
-    buttonText: "Buy Now"
+    buttonText: "Buy Now",
+    buttonTextZh: "立即购买"
   },
   {
     section: "tempsms",
     provider: "Online SIM",
     plan: "SMS",
+    planZh: "短信",
     tags: ["temp sms"],
     specs: `100+ countries · 1000+ services
 One-time & rental numbers`,
+    specsZh: `100+ 国家 · 1000+ 服务
+一次性号码 & 租用号码`,
     link: "https://onlinesim.io/?aref=9631609",
-    buttonText: "Buy Now"
+    buttonText: "Buy Now",
+    buttonTextZh: "立即购买"
   },
 
 ];
