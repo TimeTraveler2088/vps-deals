@@ -390,7 +390,7 @@ New York, US`,
     buttonText: "Buy Now"
   },
   {
-    section: "storage",
+    section: "month",
     provider: "AlphaVPS",
     plan: "Storage 128G",
     tags: ["kvm", "storage"],
