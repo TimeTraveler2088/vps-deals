@@ -678,13 +678,35 @@
     let currentSearch = "";
     let currentCountry = "all";
 
+<<<<<<< Updated upstream
+=======
+    // Pick Chinese field if present when lang is zh, else English field
+    function pickField(deal, field) {
+      if (currentLang === "zh" && deal[field + "Zh"]) return deal[field + "Zh"];
+      return deal[field] || "";
+    }
+
+    function formatPeriod(period) {
+      if (!period) return "";
+      if (currentLang !== "zh") return period;
+      return period
+        .replace(/\/\s*year/gi, "/ 年")
+        .replace(/\/\s*month/gi, "/ 月")
+        .replace(/\/\s*quarter/gi, "/ 季")
+        .replace(/\/\s*yr/gi, "/ 年");
+    }
+
+>>>>>>> Stashed changes
     function createCard(deal) {
       const isTempSms = deal.section === "tempsms";
       const country = deal.country || "";
+      const plan = pickField(deal, "plan") || deal.plan || "";
+      const specs = pickField(deal, "specs") || deal.specs || "";
+      const period = formatPeriod(pickField(deal, "period") || deal.period || "");
       const searchText = [
         deal.provider,
-        deal.plan,
-        deal.specs,
+        plan,
+        specs,
         deal.price,
         country,
         ...(deal.tags || [])
@@ -698,7 +720,14 @@
       const isFree = deal.isFree || deal.tags?.includes("free");
       const priceClass = isFree ? "price free" : "price";
       const btnClass = isFree ? "btn btn-outline-danger btn-buy" : "btn btn-primary btn-buy";
+<<<<<<< Updated upstream
       const btnText = deal.buttonText || t("buy_now");
+=======
+      // Chinese UI: prefer buttonTextZh, else i18n; English: buttonText or i18n
+      const btnText = currentLang === "zh"
+        ? (deal.buttonTextZh || t("buy_now"))
+        : (deal.buttonText || t("buy_now"));
+>>>>>>> Stashed changes
 
       if (isTempSms) {
         return `
@@ -709,11 +738,15 @@
             <div class="card deal-card">
               <div class="card-header">
                 ${deal.provider}
-                <span class="provider-badge">${deal.plan || "Temp SMS"}</span>
+                <span class="provider-badge">${plan || (currentLang === "zh" ? "临时短信" : "Temp SMS")}</span>
               </div>
               <div class="card-body">
                 <div class="mb-1">${tagsHtml}</div>
+<<<<<<< Updated upstream
                 <div class="specs">${deal.specs || ""}</div>
+=======
+                <div class="specs">${specs}</div>
+>>>>>>> Stashed changes
                 <a href="${deal.link || "#"}" class="${btnClass}" target="_blank" rel="noopener">${btnText}</a>
               </div>
             </div>
@@ -729,12 +762,17 @@
           <div class="card deal-card">
             <div class="card-header">
               ${deal.provider}
-              <span class="provider-badge">${deal.plan}</span>
+              <span class="provider-badge">${plan}</span>
             </div>
             <div class="card-body">
               <div class="mb-1">${tagsHtml}</div>
+<<<<<<< Updated upstream
               <div class="specs">${deal.specs}</div>
               <div class="${priceClass}">${deal.price} <span class="period">${deal.period || ""}</span></div>
+=======
+              <div class="specs">${specs}</div>
+              <div class="${priceClass}">${deal.price || ""} <span class="period">${period}</span></div>
+>>>>>>> Stashed changes
               <a href="${deal.link || "#"}" class="${btnClass}" target="_blank" rel="noopener">${btnText}</a>
             </div>
           </div>
