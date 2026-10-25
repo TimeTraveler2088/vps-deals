@@ -354,6 +354,42 @@
       background: rgba(255,255,255,0.15);
     }
 
+    /* Back to top */
+    .back-to-top {
+      position: fixed;
+      right: 1.25rem;
+      bottom: 1.25rem;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: none;
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(13, 110, 253, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 1050;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(8px);
+      transition: opacity 0.25s, visibility 0.25s, transform 0.25s, background 0.2s;
+      font-size: 1.25rem;
+    }
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    .back-to-top:hover {
+      background: #0b5ed7;
+      color: #fff;
+    }
+    [data-theme="dark"] .back-to-top {
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+    }
+
     /* External link style for qqvps */
     .external-section {
       margin: 2.5rem 0 1.25rem;
@@ -496,6 +532,11 @@
     </div>
   </footer>
 
+  <!-- Back to top -->
+  <button type="button" class="back-to-top" id="backToTop" title="Back to top" aria-label="Back to top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
   <!-- Data file (edit this one) -->
   <script src="deals.js"></script>
 
@@ -534,7 +575,8 @@
         section_storage: "Storage VPS",
         section_tempsms: "Temp SMS",
         brand: "Cheap VPS Deals",
-        lang_btn: "中文"
+        lang_btn: "中文",
+        back_top: "Back to top"
       },
       zh: {
         nav_under25: "≤ $25/年",
@@ -565,7 +607,8 @@
         section_storage: "存储型 VPS",
         section_tempsms: "临时短信",
         brand: "便宜 VPS 优惠",
-        lang_btn: "EN"
+        lang_btn: "EN",
+        back_top: "回到顶部"
       }
     };
 
@@ -603,6 +646,11 @@
       // Update "All Countries" option if still present
       const allOpt = document.querySelector('#countryFilter option[value="all"]');
       if (allOpt) allOpt.textContent = t("country_all");
+      const backBtn = document.getElementById("backToTop");
+      if (backBtn) {
+        backBtn.title = t("back_top");
+        backBtn.setAttribute("aria-label", t("back_top"));
+      }
     }
 
     function getSectionConfig() {
@@ -865,6 +913,23 @@
       });
     }
 
+    function setupBackToTop() {
+      const btn = document.getElementById("backToTop");
+      if (!btn) return;
+
+      const toggle = () => {
+        if (window.scrollY > 300) btn.classList.add("visible");
+        else btn.classList.remove("visible");
+      };
+
+      window.addEventListener("scroll", toggle, { passive: true });
+      toggle();
+
+      btn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    }
+
     document.addEventListener("DOMContentLoaded", () => {
       currentLang = detectLang();
       applyI18n();
@@ -872,6 +937,7 @@
       renderDeals();
       setupControls();
       setupTheme();
+      setupBackToTop();
     });
   </script>
 
