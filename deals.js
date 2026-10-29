@@ -116,6 +116,24 @@ Multiple Global Locations,Japan`,
   },
 
   // ---------- ≥ $30 / year ----------
+    {
+    section: "under30",
+    provider: "Evoxt",
+    plan: "1 vCPU - 512MB RAM",
+    tags: ["kvm", "NVMe"],
+    country: "USA, Germany, United Kingdom, Hong Kong, Japan",
+    specs: `1 vCPU
+512MB RAM
+5GB NVMe
+500G Bandwidth
+1× IPv4 + /1 IPv6
+1Gbps Port
+Hong Kong`,
+    price: "$2.84", "code：AFF1978-88"，
+    period: "/ month",
+    link: "https://console.evoxt.com/aff.php?aff=1978",
+    buttonText: "Buy Now"
+  },
   {
     section: "under30",
     provider: "DMIT",
