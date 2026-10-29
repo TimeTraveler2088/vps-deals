@@ -116,7 +116,7 @@ Multiple Global Locations,Japan`,
   },
 
   // ---------- ≥ $30 / year ----------
-    {
+  {
     section: "under30",
     provider: "Evoxt",
     plan: "1 vCPU - 512MB RAM",
