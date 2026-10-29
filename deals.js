@@ -294,7 +294,7 @@ CN2 GIA & AS9929 & CMIN2`,
 1000G Bandwidth
 1× IPv4 
 1Gbps Port
-HMultiple Global Locations
+Multiple Global Locations
 CN2 GIA & AS9929 & CMIN2`,
     price: "$29",
     period: "/ month，USA code: Hi,LAX",
