@@ -284,6 +284,25 @@ CN2 GIA & AS9929 & CMIN2`,
   },
   {
     section: "china",
+    provider: "GoMami",
+    plan: "CN2 GIA & AS9929 & CMIN2",
+    tags: ["kvm", "nvme" , "china-optimized"],
+    country: "USA, Hong Kong, Japan, Singapore",
+    specs: `2 vCPU
+2GB RAM
+40GB SSD
+1000G Bandwidth
+1× IPv4 
+1Gbps Port
+HMultiple Global Locations
+CN2 GIA & AS9929 & CMIN2`,
+    price: "$29",
+    period: "/ month，USA code: Hi,LAX",
+    link: "https://www.dmit.io/aff.php?aff=11031&pid=265",
+    buttonText: "Buy Now"
+  },  
+  {
+    section: "china",
     provider: "DMIT",
     plan: "CN2 GIA",
     tags: ["kvm", "ssd" , "china-optimized"],
