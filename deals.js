@@ -129,7 +129,7 @@ Multiple Global Locations,Japan`,
 1× IPv4 + /1 IPv6
 1Gbps Port
 Multiple Global Locations`,
-    price: "$2.84", "code：AFF1978-88",
+    price: "$2.84 , code：AFF1978-88",
     period: "/ month",
     link: "https://console.evoxt.com/aff.php?aff=1978",
     buttonText: "Buy Now"
