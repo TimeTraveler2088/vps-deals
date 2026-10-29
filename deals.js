@@ -120,7 +120,7 @@ Multiple Global Locations,Japan`,
     section: "under30",
     provider: "Evoxt",
     plan: "1 vCPU - 512MB RAM",
-    tags: ["kvm", "NVMe"],
+    tags: ["kvm", "nvme"],
     country: "USA, Germany, United Kingdom, Hong Kong, Japan",
     specs: `1 vCPU
 512MB RAM
