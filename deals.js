@@ -120,7 +120,7 @@ Multiple Global Locations,Japan`,
     section: "under30",
     provider: "Evoxt",
     plan: "1 vCPU - 512MB RAM",
-    tags: ["kvm", "nvme"],
+    tags: ["kvm", "nvme", "china-optimized"],
     country: "USA, Germany, United Kingdom, Hong Kong, Japan",
     specs: `1 vCPU
 512MB RAM
@@ -138,7 +138,7 @@ Multiple Global Locations`,
     section: "under30",
     provider: " JustHost",
     plan: "1 vCPU - 1G RAM",
-    tags: ["kvm", "nvme"],
+    tags: ["kvm", "nvme", "china-optimized"],
     country: "USA, Germany, United Kingdom, Hong Kong, Japan",
     specs: `1 vCPU
 1G RAM
