@@ -120,7 +120,7 @@ Multiple Global Locations,Japan`,
     section: "under30",
     provider: "Evoxt",
     plan: "1 vCPU - 512MB RAM",
-    tags: ["kvm", "nvme"],
+    tags: ["kvm", "nvme"，"china-optimized"],
     country: "USA, Germany, United Kingdom, Hong Kong, Japan",
     specs: `1 vCPU
 512MB RAM
@@ -134,6 +134,24 @@ Multiple Global Locations`,
     link: "https://console.evoxt.com/aff.php?aff=1978",
     buttonText: "Buy Now"
   },
+  {
+    section: "under30",
+    provider: " JustHost",
+    plan: "1 vCPU - 1G RAM",
+    tags: ["kvm", "nvme"，"china-optimized"],
+    country: "USA, Germany, United Kingdom, Hong Kong, Japan",
+    specs: `1 vCPU
+1G RAM
+20GB NVMe
+500G Bandwidth
+1× IPv4 + /1 IPv6
+1Gbps Port
+Multiple Global Locations`,
+    price: "$3.15",
+    period: "/ month，code: 11VPS35",
+    link: "https://justhost.asia/?ref=281025",
+    buttonText: "Buy Now"
+  },  
   {
     section: "under30",
     provider: "DMIT",
@@ -249,7 +267,7 @@ Multiple Locations，US`,
     provider: "NoSLA",
     plan: "AS9929 & CMIN2",
     tags: ["kvm", "nvme", "china-optimized"],
-    country: "USA, Germany, Hong Kong, Japan",
+    country: "USA, Germany, Japan",
     specs: `1 vCPU
 1GB RAM
 20GB NVMe SSD
@@ -268,7 +286,7 @@ AS9929 & CMIN2`,
     provider: "NoSLA",
     plan: "CN2 GIA & AS9929 & CMIN2",
     tags: ["kvm", "nvme", "china-optimized"],
-    country: "USA, Germany, Hong Kong, Japan",
+    country: "USA, Germany, Japan",
     specs: `1 vCPU（AMD 7V13）
 1GB RAM
 30GB NVMe SSD
