@@ -361,7 +361,7 @@ CN2 GIA`,
     section: "china",
     provider: "Riven",
     plan: "CN2 GIA & AS9929 & CMIN2",
-    tags: ["kvm", "nvme", "china-optimized"],
+    tags: ["kvm", "nvme" , "china-optimized"],
     country: "Japan, Singapore",
     specs: `2 vCPU AMD Ryzen 9950X
 4GB RAM
@@ -370,7 +370,7 @@ CN2 GIA`,
 1× IPv4
 1Gbps Port
 Japan，Singapore
-"CN2 GIA & AS9929 & CMIN2",`,
+CN2 GIA & AS9929 & CMIN2`,
     price: "$49",
     period: "/ month",
     link: "https://portal.sa.net/aff.php?aff=399",
