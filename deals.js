@@ -138,7 +138,7 @@ Multiple Global Locations`,
     section: "under30",
     provider: " JustHost",
     plan: "1 vCPU - 1G RAM",
-    tags: ["kvm", "nvme", "china-optimized"],
+    tags: ["kvm", "nvme"],
     country: "USA, Germany, United Kingdom, Hong Kong, Japan",
     specs: `1 vCPU
 1G RAM
