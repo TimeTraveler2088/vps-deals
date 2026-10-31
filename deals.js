@@ -129,7 +129,7 @@ Multiple Global Locations,Japan`,
 1× IPv4 + /1 IPv6
 1Gbps Port
 Multiple Global Locations`,
-    price: "$2.84",
+    price: "$2.8",
     period: "/ month，code: AFF1978-88",
     link: "https://console.evoxt.com/aff.php?aff=1978",
     buttonText: "Buy Now"
@@ -147,7 +147,7 @@ Multiple Global Locations`,
 1× IPv4 + /1 IPv6
 1Gbps Port
 Multiple Global Locations`,
-    price: "$3.15",
+    price: "$3.1",
     period: "/ month，code: 11VPS35",
     link: "https://justhost.asia/?ref=281025",
     buttonText: "Buy Now"
@@ -276,7 +276,7 @@ Multiple Locations，US`,
 150 Mbps Port
 Multiple Global Locations
 AS9929 & CMIN2`,
-    price: "$38.7",
+    price: "$52.4",
     period: "/ year",
     link: "https://nosla.cloud/ypocr.html",
     buttonText: "Buy Now"
@@ -295,7 +295,7 @@ AS9929 & CMIN2`,
 500 Mbps Port
 Multiple Global Locations
 CN2 GIA & AS9929 & CMIN2`,
-    price: "$50.4",
+    price: "$65.9",
     period: "/ year",
     link: "https://nosla.cloud/ypocr.html",
     buttonText: "Buy Now"
