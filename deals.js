@@ -501,6 +501,7 @@ Multiple Global Locations`,
     specs: `1 vCPU
 2GB RAM
 256GB SSD
+
 2000G Bandwidth
 1× IPv4
 1Gbps Port
