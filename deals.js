@@ -227,7 +227,7 @@ Multiple Locations，US`,
   {
     section: "under30",
     provider: "GreenCloud",
-    plan: "2 vCPU - 4GB RAM",
+    plan: "4 vCPU - 6GB RAM",
     tags: ["kvm", "ssd"],
     country: "USA, Germany, Japan, Singapore, Hong Kong, Netherlands",
     specs: `4 vCPU
