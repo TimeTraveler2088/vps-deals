@@ -314,7 +314,7 @@ Multiple Global Locations
 AS9929 & CMIN2`,
     price: "$52.4",
     period: "/ year",
-    link: "https://nosla.cloud/ypocr.html",
+    link: "https://ccp.nosla.cloud/order/forms/a/OTYx",
     buttonText: "Buy Now"
   },
   {
@@ -333,7 +333,7 @@ Multiple Global Locations
 CN2 GIA & AS9929 & CMIN2`,
     price: "$65.9",
     period: "/ year",
-    link: "https://nosla.cloud/ypocr.html",
+    link: "https://ccp.nosla.cloud/order/forms/a/OTYx",
     buttonText: "Buy Now"
   },
   {
