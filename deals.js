@@ -44,6 +44,24 @@ Los Angeles, US`,
   },
   {
     section: "under25",
+    provider: "CloudCone",
+    plan: "1 vCPU - 1GB RAM",
+    tags: ["kvm"],
+    country: "USA",
+    specs: `1 vCPU
+1GB RAM
+55 GB HHD
+3000G Bandwidth
+1× IPv4
+1Gbps Port
+Multiple Locations，US`,
+    price: "$12.2",
+    period: "/ year，USA code: PREBF26",
+    link: "https://app.cloudcone.com/vps/528/create?token=ccturns9-stor-vps-1&ref=11970",
+    buttonText: "Buy Now"
+  },
+  {
+    section: "under25",
     provider: "BitsFlow",
     plan: "1 vCPU - 1GB RAM",
     tags: ["kvm","nvme"],
@@ -58,6 +76,24 @@ Multiple Global Locations`,
     price: "$14.7",
     period: "/ year",
     link: "https://bitsflow.cloud/26-aut-yp.html",
+    buttonText: "Buy Now"
+  },
+  {
+    section: "under25",
+    provider: "RackNerd",
+    plan: "1 vCPU - 1GB RAM",
+    tags: ["kvm", "ssd"],
+    country: "USA",
+    specs: `1 vCPU
+1GB RAM
+20 GB PURE SSD RAID-10 Storage
+3000G Bandwidth
+1× IPv4
+1Gbps Port
+Multiple Locations，US`,
+    price: "$15.9",
+    period: "/ year",
+    link: "https://my.racknerd.com/aff.php?aff=12581&pid=968",
     buttonText: "Buy Now"
   },
   {
